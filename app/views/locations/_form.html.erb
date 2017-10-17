@@ -1,0 +1,62 @@
+<%= form_with(model: location, local: true) do |form| %>
+  <% if location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :location_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :location_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postcode %>
+    <%= form.text_field :postcode, id: :location_postcode %>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country, id: :location_country %>
+  </div> -->
+
+  <!-- <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :location_user_id %>
+  </div> -->
+
+ <!--  <iframe src="//www.google.com/maps/embed/v1/place?q=Level+2%2F7+Kelly+St%2C+Ultimo+NSW+2007
+            &attribution_source=Google+Maps+Embed+API
+            &attribution_web_url=https://developers.google.com/maps/documentation/embed/
+            &key= AIzaSyAqZ-bT5qY_uIBdO-5wYjEacfprcWWyrvU" allowfullscreen>
+              </iframe>  -->
+
+  <% location =[@location.latitude, @location.longitude].join(',') %>
+
+  
+
+  <!--  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, id: :location_longitude %>
+  </div> -->
+
+  <!-- <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, id: :location_latitude %>
+  </div>  -->
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

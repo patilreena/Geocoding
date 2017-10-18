@@ -1,0 +1,15 @@
+<h1>Contact</h1>
+<%= form_for(:contact) do |form| %>
+	<%= form.label :email %>
+	<%= form.text_field :email %>
+
+	<%= form.label :name %>
+	<%= form.text_field :name %>
+
+
+	<%= form.label :message %>
+	<%= form.text_field :message %>
+
+	<%= form.submit 'Send message'%>
+<% end %>
+
